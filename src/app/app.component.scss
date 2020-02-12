@@ -1,0 +1,14 @@
+.app {
+  font-family: 'Roboto', sans-serif;
+  display: none;
+
+  @media (min-width: 1199px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 1000px;
+
+  }
+
+
+}

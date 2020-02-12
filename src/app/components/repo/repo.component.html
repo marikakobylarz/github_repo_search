@@ -1,0 +1,46 @@
+<header class="header__header">
+  <div class="header__logo"><img src="\assets\Logo Gbx.png" alt="" /></div>
+  <div class="header__searchBar">
+    <div class="header__title">
+      <h1 class="header__text">Rekrutacja GBX Soft</h1>
+    </div>
+    <form class="header__form" action="" #tdForm="ngForm" (ngSubmit)="userSearch(tdForm)">
+      <label class="form__label" for="repo">Wpisz nazwę użytkownika repo</label>
+      <div class="form__input">
+        <input class="form__input--input" id="repo" type="text" (keyup.enter)="userSearch()" [(ngModel)]="username"
+          name="username" [disabled]="searching" />
+        <button class="form__input--button" type="submit" [disabled]="searching">
+          <mat-icon class="form__input--arrow">arrow_forward </mat-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+</header>
+
+<div class="main__main">
+  <div class="main__loading" *ngIf="searching">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div class="main__error" *ngIf="error">
+    Nie znaleziono użytkownika
+  </div>
+  <div class="main__profile" *ngIf="searchResult">
+    <div class="profile__container">
+      <div class="profile__result" *ngFor="let repo of repos | sortRepo: 'repo'">
+        <div class="profile__avatar">
+          <img class="profile__avatar--img" src="{{ repo.owner.avatar_url }}" />
+        </div>
+        <div class="profile__repo">
+          <p class="repo__name">{{ repo.name }}</p>
+          <p class="repo__description">{{ repo.description }}</p>
+          <P class="repo__default_branch">{{ repo.default_branch }}</P>
+        </div>
+        <div class="repo__link">
+          <a href="{{ repo.html_url }}" class="repo__link--link">
+            <mat-icon class="repo__link--arrow">arrow_forward</mat-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

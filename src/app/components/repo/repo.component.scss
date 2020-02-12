@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 206px;
+  width: 1200px;
+  margin-bottom: 20px;
+
+  .header__logo {
+    margin-top: 30px;
+  }
+
+  .header__searchBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-top: 46.46px;
+
+    .header__title {
+      width: 528px;
+      height: 71px;
+
+      .header__text {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 56px;
+        color: #002BDC;
+      }
+    }
+
+    .header__form {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 399px;
+      height: 60.55px;
+
+      .form__label {
+        width: 292px;
+        font-size: 12px;
+        line-height: 18px;
+        color: #304389;
+        margin-left: 7px;
+      }
+
+      .form__input {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        border: 2px solid #f1f4ff;
+        border-radius: 10px;
+        margin-bottom: 25px;
+
+        .form__input--input {
+          width: 399px;
+          height: 42px;
+          border: none;
+          outline: none;
+          border-radius: 10px;
+          padding-left: 7px;
+
+          ::ng-deep {
+            color: #848484;
+            font-size: 18px;
+
+          }
+        }
+
+        .form__input--button {
+          position: absolute;
+          bottom: 3px;
+          right: 0;
+          // height: 42px;
+          width: 50px;
+          border: none;
+          outline: none;
+          border-radius: 10px;
+          background-color: transparent;
+          text-align: left;
+
+          .form__input--arrow {
+            color: #f1f4ff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1200px;
+
+
+  .main__loading,
+  .main__error {
+    width: 1200px;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 30px;
+    line-height: 130px;
+    color: #304389;
+
+  }
+
+  .main__profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    max-height: 600px;
+    border-radius: 10px;
+    box-shadow: 1px 0 16px rgba(0, 0, 0, 0.17);
+
+    .profile__container {
+      display: grid;
+      grid-template-columns: 550px 550px;
+      grid-template-rows: 130px;
+      grid-gap: 20px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      width: 1187px;
+      margin: 40px 14px 24px 39px;
+
+      .profile__result {
+        display: flex;
+        flex-direction: row;
+        background-color: #f1f4ff;
+        border-radius: 10px;
+
+        .profile__avatar {
+          width: 110px;
+          height: 130px;
+          text-align: right;
+          padding: 0 auto;
+
+          .profile__avatar--img {
+            margin: 26px 0 44px 31px;
+            text-align: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+          }
+        }
+
+        .profile__repo {
+          display: flex;
+          flex-direction: column;
+          margin: 26px 0 15px 21px;
+          width: 340px;
+
+          .repo__name {
+            font-size: 24px;
+            line-height: 24px;
+            font-weight: 500;
+            color: #304389;
+          }
+
+          .repo__description {
+            font-size: 16px;
+            line-height: 20px;
+            height: 52px;
+            color: #848484;
+            margin-top: 4px
+          }
+
+          .repo__default_branch {
+            font-size: 10px;
+            line-height: 12px;
+            color: #a5b8ff;
+          }
+        }
+
+        .repo__link {
+          position: relative;
+          height: 130px;
+          width: 82px;
+          line-height: 130px;
+
+          .repo__link--link {
+            position: absolute;
+            top: 48px;
+            left: 18;
+            width: 34px;
+            height: 34px;
+            color: #A5B8FF;
+            margin: 0 auto;
+            text-align: center;
+
+            .repo__link--arrow {
+              position: absolute;
+              display: block;
+              top: 0px;
+              left: 0;
+              width: 34px;
+              height: 34px;
+              font-size: 45px;
+              size: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E1E1E1;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A8A8A8;
+  border-radius: 50px;
+}
